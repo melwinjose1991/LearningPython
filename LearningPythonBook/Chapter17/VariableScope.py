@@ -83,4 +83,40 @@ y = func_3()
 print(y[0](4)) # Need to assign default to i
 
 
-#%% pg.no 508
+def func_4():
+   state = 1
+   def inner_func_4():
+       # state += 1 # Not allowed, read nonlocal variables
+       print("Nothing Much")
+   return inner_func_4
+
+y = func_4()
+y()
+
+#%% nonLocal
+
+def outer():
+    state = 0
+    def inner():
+        nonlocal state
+        # nonlocal state2 # Won't work, state2 need to be present in enclosing 
+        # scope
+        state += 1
+        print("State : ", state)
+    return inner
+
+x = outer()
+x()
+
+
+#%% Function Attributes
+def outer():
+    def inner():
+        inner.var += 1
+        print(inner.var)
+    inner.var = 0
+    return inner
+
+f = outer()
+f()
+f()

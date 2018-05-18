@@ -32,4 +32,30 @@ print([[col+10 for col in row] for row in M])
 # list comp. & map run at C language speed inside the interpreter
 
           
+#%% Set Comprehensions
+# { f(x) for x in S if P(x) }
+
+
+
+#%% Dictionary Comprehensions
+# {key: val for (key,val) in zip(keys, vals)}
+
+
+
+#%% Scope and Comprehension Variables >>> pg 623 <<<
+
+# Python 3.X localizes loop variables in all four forms—temporary loop variable 
+# names in generator, set, dictionary, and list comprehensions are local to the 
+# expression. They don’t clash with names outside, but are also not available 
+# there, and work differently than the for loop iteration statement
+
+X = 99
+print([X for X in range(5)])
+print(X)
+
+X = 99
+for X in range(5): pass
+print(X)
+
+
 #%%

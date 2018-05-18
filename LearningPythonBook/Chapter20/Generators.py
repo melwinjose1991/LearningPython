@@ -88,6 +88,53 @@ for s in scramble([1,2,3]):
     print(s)
    
     
-#%% pg 614
+# Explicit is better than implicit
 
 
+#%% Examples : Map
+l = [-1, 2, -3]
+
+def mymap1(func, *seqs):
+    for args in zip(*seqs):
+        yield func(*args)
+
+def mymap2(func, *seqs):
+    return (func(*args) for args in zip(*seqs))    
+
+for a in mymap1(abs, l):
+    print(a)
+    
+for a in mymap2(abs, l):
+    print(a)
+  
+    
+#%% Examples : Zip
+l1 = [1, 2, 3]
+l2 = [1, 2, 3, 4]
+
+def myZipComp(*seqs):
+    seqs = [list(S) for S in seqs]
+    print(seqs)
+    
+    res = []
+    while all(seqs):
+        res.append(tuple(S.pop(0) for S in seqs))
+    return res
+
+def myZipGen(*seqs):
+    seqs = [list(S) for S in seqs]
+    while all(seqs):
+        yield tuple(S.pop(0) for S in seqs)
+
+myZipComp(l1, l2)
+myZipGen(l1, l2)
+
+
+#%% 3.X map returns a one-shot iterable object !!!
+l = ('abc', 'xyz123')
+iters = map(iter, l1)
+for iiter in iters:
+    print(iiter)
+
+
+#%%

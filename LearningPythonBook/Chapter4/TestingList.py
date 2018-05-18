@@ -41,6 +41,8 @@ print([row[0]+1 for row in Matrix])
 
 print([row[0] for row in Matrix if row[0] % 2 ==0])
 
+print([Matrix[i][i] for i in range(len(Matrix))])
+
 # Geneators
 G = (sum(row) for row in Matrix)    
 print(next(G))

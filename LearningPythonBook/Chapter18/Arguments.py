@@ -79,7 +79,7 @@ def func_1(a, *b, c):
     print(c)
     
 func_1(1, 2, c=3)
-# func_1(1, 2, 3) # 3 param must be keyword=value
+# func_1(1, 2, 3) # 3rd param must be keyword=value
 
 def func_2(a, *, b, **kargs):
     print("\nfunc_2")

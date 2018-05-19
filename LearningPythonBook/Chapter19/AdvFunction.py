@@ -33,9 +33,13 @@ print(func_1.__name__)
 
 #%% Functions Attributes
 
+def func_1():
+    print(func_1.a)
+    
 func_1.a = 1
 func_1.a += 1
 print(func_1.a) 
+func_1()
 
 
 #%% Function Annotations

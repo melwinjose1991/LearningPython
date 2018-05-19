@@ -30,7 +30,7 @@ def f1():
     X = 88
     def f2():
         print(X)
-    f2()
+    return f2
 
 f = f1()
 f() # f2() remembers f1()'s scope
@@ -92,6 +92,7 @@ def func_4():
 
 y = func_4()
 y()
+
 
 #%% nonLocal
 

@@ -19,7 +19,7 @@ print(X.__dict__)
 X.hola()
 print(X.__dict__)
 # As classes assign to self attributes, they populate the instance 
-# objects—that is, attributes wind up in the instances’ attribute namespace 
+# objects — that is, attributes wind up in the instances’ attribute namespace 
 # dictionaries, not in the classes’.
 
 Y = Sub()
@@ -30,6 +30,7 @@ print(Y.__dict__)
 
 print(Super.__dict__.keys())
 print(Sub.__dict__.keys())
+
 
 
 #%% Namespace Links: A Tree Climber - pg 880
@@ -51,7 +52,10 @@ def selftest():
     class E: pass
     class F(D,E): pass
 
+    print()
     instancetree(B())
+    
+    print()
     instancetree(F())
 
     

@@ -17,7 +17,7 @@ class C:
 
 
 if __name__ == '__main__':
-    print(X)        # 11: module (a.k.a. manynames.X outside file)
+    print(X)        # 11: module (a.k.a. CodingDetails2.X outside file)
     f()             # 11: global
     g()             # 22: local
     print(X)        # 11: module name unchanged

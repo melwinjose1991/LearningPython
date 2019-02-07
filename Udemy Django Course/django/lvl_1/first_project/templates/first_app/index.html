@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+
+{% load staticfiles %}
+
+<html lang="en" dir="ltr">
+
+  <head>
+    <meta charset="utf-8">
+    <title>django templates</title>
+    <link rel="stylesheet" href="{% static "css/my_style.css"  %}" />
+  </head>
+
+  <body>
+    <h1>This is H1 tag</h1>
+
+    {{ insert_me }} <br/>
+
+    <img src="{% static "images/django_guitar.jpg" %}">
+
+  </body>
+
+</html>
